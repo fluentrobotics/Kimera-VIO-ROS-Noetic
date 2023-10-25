@@ -49,8 +49,8 @@
     # Last tested commit: 2efbc572940dd56b8c6caf6d159cd7afd390d28e
 - git:
     local-name: Kimera-VIO-ROS
-    uri: https://github.com/MIT-SPARK/Kimera-VIO-ROS.git
-    version: master
+    uri: https://github.com/fluentrobotics/Kimera-VIO-ROS-Noetic.git
+    version: noetic
 - git:
     local-name: glog_catkin
     uri: https://github.com/ethz-asl/glog_catkin.git

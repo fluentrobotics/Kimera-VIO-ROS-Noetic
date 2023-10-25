@@ -44,8 +44,8 @@
     version: master
 - git:
     local-name: Kimera-VIO-ROS
-    uri: git@github.com:MIT-SPARK/Kimera-VIO-ROS.git
-    version: master
+    uri: git@github.com:fluentrobotics/Kimera-VIO-ROS-Noetic.git
+    version: noetic
 - git:
     local-name: glog_catkin
     uri: git@github.com:ethz-asl/glog_catkin.git

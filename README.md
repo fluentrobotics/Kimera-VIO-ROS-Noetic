@@ -11,7 +11,7 @@ ROS Wrapper for [Kimera](https://github.com/MIT-SPARK/Kimera).
 We kindly ask to cite our paper if you find this library useful:
 
 - A. Rosinol, M. Abate, Y. Chang, L. Carlone, [**Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping**](https://arxiv.org/abs/1910.02490). IEEE Intl. Conf. on Robotics and Automation (ICRA), 2020. [arXiv:1910.02490](https://arxiv.org/abs/1910.02490).
- 
+
  ```bibtex
  @InProceedings{Rosinol20icra-Kimera,
    title = {Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping},
@@ -27,7 +27,7 @@ We kindly ask to cite our paper if you find this library useful:
 
 ## A. Prerequisities
 
-- Install ROS by following [our reference](./docs/ros_installation.md), or the official [ROS website](https://www.ros.org/install/).
+- Install ROS by following [our reference](./docs/ros_installation.md), or the official [ROS website](http://wiki.ros.org/ROS/Installation).
 
 - ROS non-default dependencies for [mesh_rviz_plugins](https://github.com/ToniRV/mesh_rviz_plugins) (change `melodic` for your ROS distribution):
 ```bash
@@ -42,11 +42,11 @@ sudo apt-get install -y \
       cmake build-essential unzip pkg-config autoconf \
       libboost-all-dev \
       libjpeg-dev libpng-dev libtiff-dev \
-# Use libvtk5-dev, libgtk2.0-dev in ubuntu 16.04 \
-      libvtk6-dev libgtk-3-dev \
+      libvtk7-dev libgtk-3-dev \
       libatlas-base-dev gfortran \
       libparmetis-dev \
-      python-wstool python-catkin-tools \
+      python3-wstool python3-catkin-tools \
+      libtool
 ```
 
 - GTSAM's Optional dependencies (highly recommended for speed)
@@ -59,9 +59,7 @@ Install [Intel Threaded Building Blocks (TBB)](http://www.threadingbuildingblock
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin init
-catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DGTSAM_TANGENT_PREINTEGRATION=OFF
-# On Ubuntu 16.04:
-# catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DGTSAM_USE_SYSTEM_EIGEN=ON -DGTSAM_TANGENT_PREINTEGRATION=OFF
+catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14 -DGTSAM_TANGENT_PREINTEGRATION=OFF
 
 catkin config --merge-devel
 

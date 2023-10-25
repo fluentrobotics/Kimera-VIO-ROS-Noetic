@@ -1,40 +1,31 @@
-## ROS installation
+## ROS Installation
 
-Install [ROS Desktop-Full Install](http://wiki.ros.org/kinetic/Installation), below we prodive installation instructions:
+These are instructions to install ROS Noetic on Ubuntu 20.04.
+
+Install [ROS Desktop-Full Install](http://wiki.ros.org/noetic/Installation), below we provide installation instructions:
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update
+sudo apt install curl # if you haven't already installed curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 ```
 
-Now, you can install the ROS distribution corresponding to your system.
+Now, you can install ROS.
 
-- If you have **Ubuntu 16.04**, run:
 ```
-# Install ROS distribution depending on your system: Ubuntu 16.04 -> kinetic, 18.04 -> melodic
-sudo apt-get install ros-kinetic-desktop-full
+sudo apt-get install ros-noetic-desktop-full
 # Automatically source ROS for convenience:
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-```
-
-- Otherwise, if you have **Ubuntu 18.04**, run:
-```
-# Install ROS distribution depending on your system: Ubuntu 16.04 -> kinetic, 18.04 -> melodic
-sudo apt-get install ros-melodic-desktop-full
-# Automatically source ROS for convenience:
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
 Now, initialize rosdep:
 ```
-sudo apt install python-rosdep
+sudo apt install python3-rosdep
 sudo rosdep init
 rosdep update
 ```
 
 Finally, install dependencies for building packages and catkin tools:
 ```
-sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential python-catkin-tools
+sudo apt-get install build-essential python3-catkin-tools python3-rosinstall python3-rosinstall-generator python3-wstool
 ```
